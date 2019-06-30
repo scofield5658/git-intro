@@ -1,0 +1,43 @@
+.fs-22{
+    font-size: 22px !important;
+}
+.fs-20{
+    font-size: 20px !important;
+}
+.ta-l {
+    text-align: left;
+}
+.ta-c {
+    text-align: center;
+}
+.ta-r {
+    text-align: center;
+}
+.item {
+    margin: 10px 5px !important;
+}
+.small-image {
+    max-width: 60% !important;
+    max-height: 60% !important;
+}
+.fixed-image {
+    width: 64px;
+    height: 64px;
+}
+.layout-h {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.layout-v {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+code {
+    white-space: pre-wrap !important;
+}

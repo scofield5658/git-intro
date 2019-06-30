@@ -8,7 +8,8 @@
 
 		<link rel="stylesheet" href="css/reset.css">
 		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css">
+    <link rel="stylesheet" href="css/theme/black.css">
+    <link rel="stylesheet" href="css/custom.css">
 
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/monokai.css">
@@ -25,8 +26,87 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<section>
+					<h3>Git</h3>
+					<p class="fs-20 item">zhi.guo@geekthings.com.cn</p>
+        </section>
+        <section>
+          <img data-src="static/git.png" class="small-image">
+          <p class="fs-22 ta-l">Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency</p>
+        </section>
+				<section>
+          <h4>GUI</h4>
+          <div class="layout-h">
+            <div class="item"><img class="fixed-image" data-src="static/desktop.svg"></div>
+            <div class="item"><img class="fixed-image" data-src="static/gitkraken.png"></div>
+            <div class="item"><img class="fixed-image" data-src="static/tortoise.png"></div>
+          </div>
+        </section>
+        <section>
+          <h4>Git Bash/Command</h4>
+          <ul class="ta-c">
+            <li class="fs-22 ta-l item">Clone</li>
+            <li class="fs-22 ta-l item">Pull/Fetch</li>
+            <li class="fs-22 ta-l item">Add/Commit/Push</li>
+            <li class="fs-22 ta-l item">Reset/Revert</li>
+            <li class="fs-22 ta-l item">Stash</li>
+            <li class="fs-22 ta-l item">Branch/Checkout/Merge</li>
+            <li class="fs-22 ta-l item">Rebase</li>
+            <li class="fs-22 ta-l item">Diff</li>
+            <li class="fs-22 ta-l item">Rm</li>
+          </ul>
+        </section>
+        <section>
+          <section data-markdown>
+            <script type="text/template">
+              ## Case 1
+            
+              > You modified some file locally and prepared to commit, while one collaborator pushed his code first.
+              
+              ```bash
+              $ git pull
+              $ # auto-merge if same file changed
+              $ git commit -m 'xxx'
+              $ git push xxx
+
+              $ # better solution?
+              $ # stash
+              ```
+            </script>
+          </section>
+          <section data-markdown>
+            <script type="text/template">
+              ## Case 2
+              
+              > You modified some file locally, committed and prepared to push code to git repo, while one collaborator pushed his code first.
+              
+              ```bash
+              $ git pull
+              $ # auto-merge if same file changed
+              $ git push xxx
+
+              $ # better solution?
+              $ # fetch / rebase
+              ```
+            </script>
+          </section>
+          <section data-markdown>
+            <script type='text/template'>
+              ## Case 3*
+              
+              > You pushed node_modules in nodejs or target in java by mistake
+              
+              ```bash
+              $ git filter-branch --force --index-filter 'git rm --cached --ignore-unmatch ${file|directory|regex}' --prune-empty --tag-name-filter cat -- --all
+              $ git push origin master --force --all
+              $ git push origin master --force --tags
+              ```
+            </script>
+          </section>
+        </section>
+				<section>
+					<h5>Q & A</h5>
+				</section>
 			</div>
 		</div>
 
